@@ -33,8 +33,6 @@ public class GameData implements Serializable {
     public static boolean customTntRecipe = true;
 
 
-
-
     public static boolean needDataReentryAfterUpdateForVersion2 = false;
 
     GameData() {
@@ -77,7 +75,7 @@ public class GameData implements Serializable {
         return uuidUserPair.containsKey(uuid);
     }
 
-//    Static things
+    //    Static things
     public static GameData readData() {
         String path = Path.of(Bukkit.getWorlds().get(0).getWorldFolder().getPath(), "save.doublelife").toString();
         GameData data = new GameData();
@@ -316,7 +314,7 @@ class UserPair implements Serializable {
 
     public double sharedHealth = 20;
 
-    public boolean isSharingHunger;
+    public boolean isSharingHunger = false;
     public double sharedHunger = 20;
 
     public UUID player1;

@@ -538,7 +538,7 @@ public final class DoubleLife extends JavaPlugin implements Listener {
         if (gameStarted) {
             Player hungerChanged = (Player) event.getEntity();
             UserPair pair = gameData.uuidUserPair.get(hungerChanged.getUniqueId());
-            if (pair != null) {
+            if (pair != null && pair.isSharingHunger) {
                 event.setCancelled(true);
                 pair.setHunger(event.getFoodLevel());
             }
